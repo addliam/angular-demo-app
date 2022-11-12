@@ -17,7 +17,9 @@ export class HeroesComponent implements OnInit {
   //   name: "Windstorm"
   // };
   getHeroes(): void{
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+    // this.heroes = this.heroService.getHeroes();
   }
 
   onSelect(hero: Hero): void {
